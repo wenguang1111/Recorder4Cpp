@@ -13,7 +13,7 @@ if (USE_RECORDER)
   MESSAGE(STATUS "USE_RECORDER=ON")
   add_definitions(-DUSE_RECORDER)
   set(recorder_file ${recorder_file} Recorder4Cpp/recorder.h
-  	Recorder4Cpp/recorder.cpp tool/fp_datatype.h)
+  	Recorder4Cpp/recorder.cpp)
 endif()
 
 add_library(YourLib SHARED
@@ -27,7 +27,7 @@ add_executable(YourExecutable SHARED
             ${recorder_file})
 ```
 
-To record the file, your need add following code as example after the lane that your data get calculated:
+To record the file, you need add following code as example after the lane that your data get calculated:
 
 ```c++
 void function()
