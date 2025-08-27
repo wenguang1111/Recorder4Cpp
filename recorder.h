@@ -5,6 +5,9 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <iomanip>
+
+#define Print_Precision 15
 
 class BaseMap {
   public:
@@ -109,7 +112,7 @@ class Recorder {
         for (size_t i = 0; i < maxSize; ++i) {
             for (const auto &entry : typedMap.data) {
                 if (i < entry.second.size()) {
-                    file << entry.second[i];
+                    file << std::fixed << std::setprecision(Print_Precision) << entry.second[i];
                 }
                 file << ",";
             }
